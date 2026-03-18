@@ -109,7 +109,7 @@ local function playIntro(onComplete)
 
     local madeBy=Instance.new("TextLabel"); madeBy.Size=UDim2.new(1,0,0,22)
     madeBy.Position=UDim2.new(0,0,0.5,18); madeBy.BackgroundTransparency=1
-    madeBy.Text="MADE BY el pablo"; madeBy.TextColor3=Color3.fromRGB(0,212,255)
+    madeBy.Text="MADE BY EL PATRON"; madeBy.TextColor3=Color3.fromRGB(0,212,255)
     madeBy.TextTransparency=1; madeBy.TextSize=16; madeBy.Font=Enum.Font.GothamBold
     madeBy.ZIndex=5; madeBy.Parent=bg
     Instance.new("UIGradient",madeBy).Color=ColorSequence.new({
