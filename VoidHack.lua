@@ -647,39 +647,7 @@ makeBigBtn(cfgP,"🔄","RESET DEFAULTS","Reset all to default values",Color3.fro
     setStatus("✓ Reset to defaults",false)
 end)
 
--- ANILAR (6)
-local aniP=makePanel(); panels[6]=aniP
-makeSec(aniP,"ANILARIM",1)
-local photoCard=Instance.new("Frame"); photoCard.Size=UDim2.new(1,0,0,230)
-photoCard.BackgroundColor3=Color3.fromRGB(13,18,28); photoCard.BorderSizePixel=0
-photoCard.LayoutOrder=2; photoCard.Parent=aniP
-Instance.new("UICorner",photoCard).CornerRadius=UDim.new(0,8)
-local pcs=Instance.new("UIStroke",photoCard); pcs.Color=Color3.fromRGB(0,60,90); pcs.Thickness=1
-local img=Instance.new("ImageLabel"); img.Size=UDim2.new(1,-16,0,178); img.Position=UDim2.new(0,8,0,8)
-img.BackgroundColor3=Color3.fromRGB(8,12,20); img.BorderSizePixel=0
-img.Image="rbxassetid://5696027527"; img.ScaleType=Enum.ScaleType.Fit; img.ZIndex=2; img.Parent=photoCard
-Instance.new("UICorner",img).CornerRadius=UDim.new(0,6)
-local imgLoad=Instance.new("TextLabel"); imgLoad.Size=UDim2.new(1,0,1,0); imgLoad.BackgroundTransparency=1
-imgLoad.Text="⏳  Yükleniyor..."; imgLoad.TextColor3=Color3.fromRGB(50,70,90)
-imgLoad.TextSize=11; imgLoad.Font=Enum.Font.Code; imgLoad.ZIndex=2; imgLoad.Visible=true; imgLoad.Parent=img
-task.spawn(function()
-    local t=0; while t<10 do task.wait(0.5); t=t+0.5
-        if img.IsLoaded then imgLoad.Visible=false; return end
-    end; imgLoad.Visible=false
-end)
-local pline=Instance.new("Frame"); pline.Size=UDim2.new(1,-16,0,1); pline.Position=UDim2.new(0,8,0,192)
-pline.BackgroundColor3=Color3.fromRGB(0,60,90); pline.BorderSizePixel=0; pline.Parent=photoCard
-local pcap=Instance.new("TextLabel"); pcap.Size=UDim2.new(1,-16,0,28); pcap.Position=UDim2.new(0,8,0,196)
-pcap.BackgroundTransparency=1; pcap.Text="📸  Anı #1"; pcap.TextColor3=Color3.fromRGB(140,170,190)
-pcap.TextSize=12; pcap.Font=Enum.Font.GothamBold; pcap.TextXAlignment=Enum.TextXAlignment.Left; pcap.Parent=photoCard
-photoCard.MouseEnter:Connect(function()
-    TweenService:Create(photoCard,TweenInfo.new(0.15),{BackgroundColor3=Color3.fromRGB(16,22,34)}):Play()
-    TweenService:Create(pcs,TweenInfo.new(0.15),{Color=Color3.fromRGB(0,120,170)}):Play()
-end)
-photoCard.MouseLeave:Connect(function()
-    TweenService:Create(photoCard,TweenInfo.new(0.15),{BackgroundColor3=Color3.fromRGB(13,18,28)}):Play()
-    TweenService:Create(pcs,TweenInfo.new(0.15),{Color=Color3.fromRGB(0,60,90)}):Play()
-end)
+
 
 -- ================================================
 --  SERVER TAB (7)
